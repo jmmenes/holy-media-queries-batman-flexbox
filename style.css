@@ -1,3 +1,11 @@
+/* default appearance */
+
+/* CSS box-sizing property makes sure that padding and borders 
+do not increase the width and height of elements.
+
+Set box-sizing to CSS border-box to guarantee that the element size 
+includes borders and padding. */
+
 * {
   box-sizing: border-box;
 }
@@ -48,4 +56,46 @@
   height: 20vh;
   width: 100vw;
   background-color: #f08a4b;
+}
+
+/* Tablet layout that takes effect if the screen is bigger than the 
+mobile layout but below 1100 pixels wide. */
+
+@media screen and (max-width: 1100px) {
+  #middle {
+    flex-direction: column;
+  }
+
+  #nav,
+  #main {
+    flex: 1;
+    width: 100%;
+  }
+
+  #articles {
+    flex: 1;
+  }
+
+  #ads {
+    width: 50vw;
+    height: 35vw;
+  }
+}
+
+/* Mobile layout that takes effect if the screen is below 700 pixes wide. */
+
+@media screen and (max-width: 700px) {
+  #main {
+    flex-direction: column;
+    flex: 4;
+  }
+
+  #articles {
+    height: 45vw;
+    width: 100%;
+  }
+  #ads {
+    height: 25vw;
+    width: 100%;
+  }
 }
